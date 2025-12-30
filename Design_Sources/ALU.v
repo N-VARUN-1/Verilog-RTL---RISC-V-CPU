@@ -52,24 +52,8 @@ module ALU (
     output reg  [31:0] result,
     output wire        zero
 );
-    wire signed [31:0] a_s = a;
-    wire signed [31:0] b_s = b;
+   // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 
-    assign zero = (result == 32'd0);
-
-    always @(*) begin
-        case (alu_op)
-            3'b000: result = a + b;                 // ADD / ADDI
-            3'b001: result = a - b;                 // SUB
-            3'b010: result = a & b;                 // AND / ANDI
-            3'b011: result = a | b;                 // OR / ORI
-            3'b100: result = a ^ b;                 // XOR / XORI
-            3'b101: result = a << b[4:0];           // SLL / SLLI
-            3'b110: result = a >> b[4:0];           // SRL / SRLI (logical)
-            3'b111: result = (a_s < b_s) ? 32'd1    // SLT / SLTI (signed)
-                                         : 32'd0;
-            default: result = 32'd0;
-        endcase
-    end
 endmodule
 
