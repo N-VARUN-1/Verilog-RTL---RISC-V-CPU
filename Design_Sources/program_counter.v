@@ -30,19 +30,7 @@ module program_counter # (
     output reg[31:0] pc
     );
     
-    wire [31:0] pc_plus4;
-    wire [31:0] pc_next;
-    
-    assign pc_plus4 = pc + 32'd4;
-    assign pc_next = branch_en ? branch_target : pc_plus4;
-    
-    always @(posedge clk) 
-    begin
-        if(rst)
-            pc <= RESET_PC;
-        else    
-            pc <= pc_next;
-    end
-    
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
     
 endmodule
