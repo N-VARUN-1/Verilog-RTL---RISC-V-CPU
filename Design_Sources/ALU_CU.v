@@ -58,26 +58,6 @@ module ALU_CU(
     input wire[1:0] ALUOp,
     output reg[2:0] alu_op
 );
-    always @(*) begin
-        case(ALUOp)
-            2'b00: alu_op = 3'b000;  // Load/Store: ADD
-            2'b01: alu_op = 3'b001;  // Branch: SUB
-            2'b10: begin             // R-type/I-type: use func3/7
-                casex({func7[5], func3})
-                    7'b0_000_0: alu_op = 3'b000;  // ADD/ADDI
-                    7'b1_000_0: alu_op = 3'b001;  // SUB
-                    7'b0_001_0: alu_op = 3'b101;  // SLL/SLLI
-                    7'b0_010_0: alu_op = 3'b111;  // SLT/SLTI
-                    7'b0_011_0: alu_op = 3'b111;  // SLTU/SLTIU (treat as SLT for simplicity)
-                    7'b0_100_0: alu_op = 3'b100;  // XOR/XORI
-                    7'b0_101_0: alu_op = 3'b110;  // SRL/SRLI
-                    7'b1_101_0: alu_op = 3'b110;  // SRA/SRAI (your ALU uses logical >>)
-                    7'b0_110_0: alu_op = 3'b010;  // OR/ORI
-                    7'b0_111_0: alu_op = 3'b011;  // AND/ANDI
-                    default:    alu_op = 3'b000;
-                endcase
-            end
-            default: alu_op = 3'b000;
-        endcase
-    end
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 endmodule
