@@ -28,22 +28,6 @@ module Branch_Unit(
     output reg branch_taken
     );
     
-    wire signed [31:0] s_rs1 = rs1;
-    wire signed [31:0] s_rs2 = rs2;
-    
-    always @(*) begin
-        if(is_branch) begin
-            case(func3)
-                3'b000 : branch_taken = (s_rs1 == s_rs2);
-                3'b001 : branch_taken = (s_rs1 != s_rs2);
-                3'b100 : branch_taken = (s_rs1 < s_rs2);
-                3'b101 : branch_taken = (s_rs1 > s_rs2);
-                3'b110 : branch_taken = (rs1 < rs2);
-                3'b111 : branch_taken = (rs1 > rs2);
-                default : branch_taken = 1'b0;
-            endcase
-        end  else begin
-            branch_taken = 1'b0;   // IMPORTANT: defined when not a branch
-        end    
-    end
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 endmodule
