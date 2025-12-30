@@ -78,7 +78,7 @@ This project focuses on **RTL-level CPU design**, emphasizing correctness, modul
 
 ## Results & Outcomes
 ![Waveform-1 : Clock cycles, Reset, PC and Instructions Waveform] (Images/Screenshot from 2025-12-30 15-06-19.png)
-![Waveform-1 : Results of ALU operations reflected in Register File] (Images/Screenshot from 2025-12-30 15-06-40.png)
+
 
 ## 👨‍💻 Author
 **N. Varun**  
