@@ -26,11 +26,6 @@ module Write_Back(
     input wire mem_to_reg,
     output reg[31:0] write_data
     );
-    always @(*) begin
-        case(mem_to_reg)
-            1'b1 : write_data = mem_data;
-            1'b0 : write_data = alu_result;    
-            default: write_data = 32'd0;        
-        endcase
-    end
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 endmodule
