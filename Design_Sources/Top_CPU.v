@@ -282,19 +282,7 @@ module Top_CPU (
     //                              ASSIGNMENTS
     // =====================================================================
 
-    // Decode rs1, rs2, rd from IF/ID instruction
-    assign rs1_addr = instr_if_id_out[19:15];
-    assign rs2_addr = instr_if_id_out[24:20];
-    assign rd_addr  = instr_if_id_out[11:7];
-
-    // ALU input selection (ALUSrc) - FIXED: use EX stage control
-    assign alu_b = ALUSrc_ex ? imm_ex : rs2_val_ex;
-
-    // Branch target calculation
-    assign branch_target_ex = pc_ex + imm_ex;
-
-    // Branch control to PC - FIXED: proper branch logic
-    assign branch_en = Branch_ex & branch_taken_ex;
-    assign branch_target = branch_target_ex;
+   // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 
 endmodule
