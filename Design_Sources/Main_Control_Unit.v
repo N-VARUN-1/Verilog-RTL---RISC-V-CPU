@@ -31,64 +31,8 @@ module MainControl (
     output reg MemToReg
 );
 
-    always @(*) begin
-        case (opcode)
-            7'b0110011: begin // R-type
-                ALUOp = 2'b10;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                RegWrite = 1'b1;
-                Branch = 1'b0;
-                ALUSrc = 1'b0;
-                MemToReg = 1'b0;
-            end
-            7'b0010011: begin // I-type
-                ALUOp = 2'b10;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                RegWrite = 1'b1;
-                Branch = 1'b0;
-                ALUSrc = 1'b1;
-                MemToReg = 1'b0;
-            end
-            7'b0000011: begin // Load
-                ALUOp = 2'b00;
-                MemRead = 1'b1;
-                MemWrite = 1'b0;
-                RegWrite = 1'b1;
-                Branch = 1'b0;
-                ALUSrc = 1'b1;
-                MemToReg = 1'b1;
-            end
-            7'b0100011: begin // Store
-                ALUOp = 2'b00;
-                MemRead = 1'b0;
-                MemWrite = 1'b1;
-                RegWrite = 1'b0;
-                Branch = 1'b0;
-                ALUSrc = 1'b1;
-                MemToReg = 1'b0;
-            end
-            7'b1100011: begin // Branch
-                ALUOp = 2'b01;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                RegWrite = 1'b0;
-                Branch = 1'b1;
-                ALUSrc = 1'b0;
-                MemToReg = 1'b0;
-            end
-            default: begin
-                ALUOp = 2'b00;
-                MemRead = 1'b0;
-                MemWrite = 1'b0;
-                RegWrite = 1'b0;
-                Branch = 1'b0;
-                ALUSrc = 1'b0;
-                MemToReg = 1'b0;
-            end
-        endcase
-    end
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 
 endmodule
 
