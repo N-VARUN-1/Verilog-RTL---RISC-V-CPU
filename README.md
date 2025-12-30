@@ -76,6 +76,9 @@ This project focuses on **RTL-level CPU design**, emphasizing correctness, modul
 
 ---
 
+## Results & Outcomes
+![Waveform-1 : Results of ALU operations reflected in Register File] ()
+
 ## 👨‍💻 Author
 **N. Varun**  
 ---
