@@ -36,20 +36,6 @@ module MEM_WB_Pipe_Reg(
     output reg mem_to_reg_out
     );
     
-    always @(posedge clk)begin
-        if(rst) begin
-            alu_result_out <= 32'd0;
-            mem_data_out <= 32'd0;
-            rd_out <= 5'd0;
-            reg_write_out <= 1'd0;
-            mem_to_reg_out <= 1'd0;
-        end
-        else begin
-            alu_result_out <= alu_result_in;
-            mem_data_out <= mem_data_in;
-            rd_out <= rd_in;
-            reg_write_out <= reg_write_in;
-            mem_to_reg_out <= mem_to_reg_in;
-        end
-    end
+   // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
 endmodule
