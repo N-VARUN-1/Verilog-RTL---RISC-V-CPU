@@ -32,15 +32,7 @@ module Decode_Register_File(
     output reg[31:0] rd2
     );
     
-    reg[31:0] regfile[0:31];
-    
-    always @(posedge clk) begin
-        if(rst)begin
-            for(integer i=0; i<32; i = i+1)
-                regfile[i] <= 5'd0;
-        end else if(write_en && rd != 5'd0) begin
-            regfile[rd] <= wd;
-        end
-    end
+    // Internal implementation omitted in public version.
+   // Complete source is available for technical evaluation.
     
 endmodule
